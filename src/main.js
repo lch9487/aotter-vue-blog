@@ -1,8 +1,32 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import BootstrapVue from "bootstrap-vue";
+import VueResource from "vue-resource";
+import VueRouter from "vue-router";
+import VuePaginate from "vue-paginate";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+import App from "./App.vue";
+import Blog from "./components/Blog.vue";
+import PostDetail from "./components/PostDetail.vue";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+
+Vue.use(BootstrapVue);
+Vue.use(VueResource);
+Vue.use(VueRouter);
+Vue.use(VuePaginate);
+
+const routes = [
+  { path: "/", component: Blog },
+  { path: "/post/:id", component: PostDetail }
+];
+
+const router = new VueRouter({
+  mode: "history",
+  routes
+});
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  router,
+  render: h => h(App)
+}).$mount("#app");
