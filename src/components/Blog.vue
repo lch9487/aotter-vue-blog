@@ -6,7 +6,9 @@
       <paginate name="blogs" :list="posts" :per="10" tag="div">
         <section :key="blog.id" v-for="blog in paginated('blogs')">
           <h2>{{ blog.title }}</h2>
-          <router-link :to="'/post/' + blog.id" class="btn btn-primary">read more</router-link>
+          <b-row align-h="end">
+            <router-link :to="'/post/' + blog.id" class="btn btn-primary">read more</router-link>
+          </b-row>
           <hr>
         </section>
       </paginate>

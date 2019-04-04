@@ -1,7 +1,7 @@
 <template>
   <swiper :options="swiperOption">
     <swiper-slide :key="photo.id" v-for="photo in photos">
-      <img class="img-fluid" :src="photo.url" :alt="photo.title">
+      <img :src="photo.url" :alt="photo.title">
     </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
     <div class="swiper-button-prev" slot="button-prev"></div>
@@ -45,7 +45,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 img {
   width: 100%;
   height: auto;

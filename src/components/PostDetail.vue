@@ -13,7 +13,7 @@
     </nav>
 
     <h2>Discussion</h2>
-    <button @click="showComments" v-if="!showCommentBox" class="btn btn-primary">show comments</button>
+    <Button :onClick="showComments" v-if="!showCommentBox">show comments</Button>
 
     <ul class="list-group" v-if="showCommentBox">
       <li :key="comment.id" v-for="comment in comments" class="list-group-item">
@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import Button from "./widgets/Button";
+
 export default {
   data() {
     return {
@@ -51,7 +53,8 @@ export default {
         .then(json => (this.comments = json), error => console.log(error))
         .then(() => (this.showCommentBox = true));
     }
-  }
+  },
+  components: { Button }
 };
 </script>
 
