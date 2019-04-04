@@ -3,8 +3,12 @@ import BootstrapVue from "bootstrap-vue";
 import VueResource from "vue-resource";
 import VueRouter from "vue-router";
 import VuePaginate from "vue-paginate";
+import VueAwesomeSwiper from "vue-awesome-swiper";
+
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
+import "swiper/dist/css/swiper.css";
+
 import App from "./App.vue";
 import Blog from "./components/Blog.vue";
 import PostDetail from "./components/PostDetail.vue";
@@ -15,6 +19,7 @@ Vue.use(BootstrapVue);
 Vue.use(VueResource);
 Vue.use(VueRouter);
 Vue.use(VuePaginate);
+Vue.use(VueAwesomeSwiper);
 
 const routes = [
   { path: "/", component: Blog },

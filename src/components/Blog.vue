@@ -1,5 +1,7 @@
 <template>
   <div class="container">
+    <Swiper/>
+
     <div class="row">
       <paginate name="blogs" :list="posts" :per="10" tag="div">
         <section :key="blog.id" v-for="blog in paginated('blogs')">
@@ -26,15 +28,15 @@
 
       <footer class="col-sm-12">
         <hr>
-        <p class="text-center">
-          <a href="http://www.peterstehlik.com" target="_blank">lch9487</a>&copy; 2019
-        </p>
+        <p class="text-center">lch9487&copy; 2019</p>
       </footer>
     </div>
   </div>
 </template>
 
 <script>
+import Swiper from "./Swiper";
+
 export default {
   name: "Blog",
 
@@ -49,7 +51,12 @@ export default {
     this.$http
       .get("http://jsonplaceholder.typicode.com/posts")
       .then(response => response.json(), error => console.log(error))
-      .then(json => (this.posts = json), error => console.log(error));
-  }
+      .then(
+        json => (this.posts = json.slice(0, 50)),
+        error => console.log(error)
+      );
+  },
+
+  components: { Swiper }
 };
 </script>
