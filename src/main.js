@@ -25,7 +25,7 @@ Vue.use(VueAwesomeSwiper);
 const routes = [
   { path: "/", component: Blog },
   { path: "/posts", component: PostList },
-  { path: "/post/:id", component: PostDetail }
+  { path: "/posts/:id", component: PostDetail, props: true }
 ];
 
 const router = new VueRouter({

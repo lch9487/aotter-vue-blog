@@ -5,7 +5,7 @@
         <section :key="blog.id" v-for="blog in paginated('blogs')">
           <h2>{{ blog.title }}</h2>
           <b-row align-h="end">
-            <router-link :to="'/post/' + blog.id" class="btn btn-primary">read more</router-link>
+            <router-link :to="'/posts/' + blog.id" class="btn btn-primary">read more</router-link>
           </b-row>
           <hr>
         </section>

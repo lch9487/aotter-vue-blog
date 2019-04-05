@@ -1,6 +1,6 @@
 <template>
   <swiper :options="swiperOption">
-    <swiper-slide :key="photo.id" v-for="photo in photos">
+    <swiper-slide :key="photo.id" v-for="photo in photos" @click.native="() => goToPage(photo.id)">
       <img :src="photo.url" :alt="photo.title">
     </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
@@ -32,6 +32,11 @@ export default {
         }
       }
     };
+  },
+  methods: {
+    goToPage(id) {
+      this.$router.push(`/posts/${id}`);
+    }
   },
   mounted() {
     this.$http
