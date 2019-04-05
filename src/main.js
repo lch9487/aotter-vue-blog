@@ -11,6 +11,7 @@ import "swiper/dist/css/swiper.css";
 
 import App from "./App.vue";
 import Blog from "./components/Blog.vue";
+import PostList from "./components/PostList.vue";
 import PostDetail from "./components/PostDetail.vue";
 
 Vue.config.productionTip = false;
@@ -23,6 +24,7 @@ Vue.use(VueAwesomeSwiper);
 
 const routes = [
   { path: "/", component: Blog },
+  { path: "/posts", component: PostList },
   { path: "/post/:id", component: PostDetail }
 ];
 

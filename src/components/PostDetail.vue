@@ -3,15 +3,6 @@
     <h1>{{ post.title }}</h1>
     <p>{{ post.body }}</p>
 
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <router-link :to="'/'">Home</router-link>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">{{ post.title }}</li>
-      </ol>
-    </nav>
-
     <h2>Discussion</h2>
     <Button :onClick="showComments" v-if="!showCommentBox">show comments</Button>
 
