@@ -42,7 +42,7 @@ export default {
 
   created() {
     this.$http
-      .get("http://jsonplaceholder.typicode.com/posts")
+      .get("https://jsonplaceholder.typicode.com/posts")
       .then(response => response.json(), error => console.log(error))
       .then(
         json => (this.posts = json.slice(0, 50)),

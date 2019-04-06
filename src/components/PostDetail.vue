@@ -47,13 +47,13 @@ export default {
     fetchData() {
       this.$http
         .get(
-          "http://jsonplaceholder.typicode.com/posts/" + this.$route.params.id
+          "https://jsonplaceholder.typicode.com/posts/" + this.$route.params.id
         )
         .then(response => response.json(), error => console.log(error))
         .then(json => (this.post = json), error => console.log(error));
 
       this.$http
-        .get("http://jsonplaceholder.typicode.com/posts/")
+        .get("https://jsonplaceholder.typicode.com/posts/")
         .then(response => response.json(), error => console.log(error))
         .then(
           json => (this.relatedPosts = json.slice(0, 5)),
@@ -63,7 +63,7 @@ export default {
     showComments() {
       this.$http
         .get(
-          "http://jsonplaceholder.typicode.com/comments?postId=" +
+          "https://jsonplaceholder.typicode.com/comments?postId=" +
             this.$route.params.id
         )
         .then(response => response.json(), error => console.log(error))

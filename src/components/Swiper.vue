@@ -40,7 +40,7 @@ export default {
   },
   mounted() {
     this.$http
-      .get("http://jsonplaceholder.typicode.com/photos")
+      .get("https://jsonplaceholder.typicode.com/photos")
       .then(response => response.json(), error => console.log(error))
       .then(
         json => (this.photos = json.slice(0, 3)),
